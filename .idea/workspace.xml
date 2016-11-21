@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4d5e77d-ccaa-4288-a6cd-128ed35c645c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/gft/bench/calendar/GFTCalendar$GFTIterator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/gft/bench/calendar/GFTCalendar.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/gft/bench/model/NodeComponent.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/gft/bench/model/NodeComponentCollection$NodeComponentIterator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/gft/bench/model/NodeComponentCollection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/gft/bench/model/NodeComponentImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/gft/bench/calendar/GFTCalendarTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/gft/bench/model/NodeComponentCollectionTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/gft/bench/model/NodeComponentImplTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/gft/bench/model/NodeComponentStringImpl.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/gft/bench/model/NodeComponentCollectionTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/gft/bench/model/NodeComponentCollectionTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/gft/bench/model/NodeComponentImplTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/gft/bench/model/NodeComponentImplTest.java" />
     </list>
     <ignored path="TechnicalChallenge1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +29,8 @@
       <file leaf-file-name="NodeComponentImplTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/gft/bench/model/NodeComponentImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="1544">
+              <caret line="78" column="24" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -46,48 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NodeComponentStringImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/gft/bench/model/NodeComponentStringImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NodeComponent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gft/bench/model/NodeComponent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NodeComponentImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gft/bench/model/NodeComponentImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-              <folding>
-                <element signature="e#391#392#0" expanded="true" />
-                <element signature="e#429#430#0" expanded="true" />
-                <element signature="e#475#476#0" expanded="true" />
-                <element signature="e#505#506#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NodeComponentCollectionTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NodeComponentCollectionTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/gft/bench/model/NodeComponentCollectionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1602">
-              <caret line="116" column="6" selection-start-line="116" selection-start-column="6" selection-end-line="116" selection-end-column="6" />
+            <state relative-caret-position="1298">
+              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,11 +77,11 @@
         <option value="$PROJECT_DIR$/src/test/java/com/gft/bench/calendar/GFTCalendarTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gft/bench/model/NodeComponent.java" />
         <option value="C:/Program Files/Java/jdk1.8.0_91/jre/lib/rt.jar!/java/lang/ClassLoader.class" />
-        <option value="$PROJECT_DIR$/src/test/java/com/gft/bench/model/NodeComponentImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gft/bench/model/NodeComponentCollection.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gft/bench/model/NodeComponentImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/gft/bench/model/NodeComponentCollectionTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/gft/bench/model/NodeComponentStringImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/gft/bench/model/NodeComponentImplTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/gft/bench/model/NodeComponentCollectionTest.java" />
       </list>
     </option>
   </component>
@@ -233,6 +188,62 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bench" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TechnicalChallenge1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TechnicalChallenge1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bench" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TechnicalChallenge1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TechnicalChallenge1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -254,111 +265,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.NodeComponentCollectionTest.shouldRetrieveTheChildrenOfChildrenCorrectly">
-    <configuration default="false" name="NodeComponentCollectionTest.shouldReturnTheIteratorWithSizeZeroWhenRootHasNoChildren" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.gft.bench.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="TechnicalChallenge1" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.gft.bench.model" />
-      <option name="MAIN_CLASS_NAME" value="com.gft.bench.model.NodeComponentCollectionTest" />
-      <option name="METHOD_NAME" value="shouldReturnTheIteratorWithSizeZeroWhenRootHasNoChildren" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="NodeComponentCollectionTest.shouldNotAllowNullValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.gft.bench.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="TechnicalChallenge1" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.gft.bench.model" />
-      <option name="MAIN_CLASS_NAME" value="com.gft.bench.model.NodeComponentCollectionTest" />
-      <option name="METHOD_NAME" value="shouldNotAllowNullValue" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="NodeComponentCollectionTest.shouldHaveIteratorOfSizeZeroWhenRootWithNoChildren" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.gft.bench.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="TechnicalChallenge1" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.gft.bench.model" />
-      <option name="MAIN_CLASS_NAME" value="com.gft.bench.model.NodeComponentCollectionTest" />
-      <option name="METHOD_NAME" value="shouldHaveIteratorOfSizeZeroWhenRootWithNoChildren" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="NodeComponentCollectionTest.shouldHaveAllTheChildrenAndSubChildrenWithTheRoot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.gft.bench.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="TechnicalChallenge1" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.gft.bench.model" />
-      <option name="MAIN_CLASS_NAME" value="com.gft.bench.model.NodeComponentCollectionTest" />
-      <option name="METHOD_NAME" value="shouldHaveAllTheChildrenAndSubChildrenWithTheRoot" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.NodeComponentImplTest.shouldReturnTheChildrenOfSubdirectory">
     <configuration default="false" name="NodeComponentCollectionTest.shouldRetrieveTheChildrenOfChildrenCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -372,6 +279,110 @@
       <option name="PACKAGE_NAME" value="com.gft.bench.model" />
       <option name="MAIN_CLASS_NAME" value="com.gft.bench.model.NodeComponentCollectionTest" />
       <option name="METHOD_NAME" value="shouldRetrieveTheChildrenOfChildrenCorrectly" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="NodeComponentImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.gft.bench.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="TechnicalChallenge1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.gft.bench.model" />
+      <option name="MAIN_CLASS_NAME" value="com.gft.bench.model.NodeComponentImplTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="NodeComponentImplTest.shouldReturnChildrenOfRootDirectory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.gft.bench.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="TechnicalChallenge1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.gft.bench.model" />
+      <option name="MAIN_CLASS_NAME" value="com.gft.bench.model.NodeComponentImplTest" />
+      <option name="METHOD_NAME" value="shouldReturnChildrenOfRootDirectory" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="NodeComponentImplTest.shouldReturnEmptyListWhenRootDirectoryIsEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.gft.bench.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="TechnicalChallenge1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.gft.bench.model" />
+      <option name="MAIN_CLASS_NAME" value="com.gft.bench.model.NodeComponentImplTest" />
+      <option name="METHOD_NAME" value="shouldReturnEmptyListWhenRootDirectoryIsEmpty" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="NodeComponentImplTest.shouldReturnTheChildrenOfSubdirectory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.gft.bench.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="TechnicalChallenge1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.gft.bench.model" />
+      <option name="MAIN_CLASS_NAME" value="com.gft.bench.model.NodeComponentImplTest" />
+      <option name="METHOD_NAME" value="shouldReturnTheChildrenOfSubdirectory" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -652,19 +663,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.NodeComponentCollectionTest.shouldReturnTheIteratorWithSizeZeroWhenRootHasNoChildren" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.NodeComponentCollectionTest.shouldNotAllowNullValue" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.NodeComponentCollectionTest.shouldHaveIteratorOfSizeZeroWhenRootWithNoChildren" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.NodeComponentCollectionTest.shouldHaveAllTheChildrenAndSubChildrenWithTheRoot" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.NodeComponentCollectionTest.shouldRetrieveTheChildrenOfChildrenCorrectly" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.NodeComponentCollectionTest.shouldRetrieveTheChildrenOfChildrenCorrectly" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.NodeComponentImplTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.NodeComponentImplTest.shouldReturnChildrenOfRootDirectory" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.NodeComponentImplTest.shouldReturnEmptyListWhenRootDirectoryIsEmpty" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.NodeComponentImplTest.shouldReturnTheChildrenOfSubdirectory" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.NodeComponentCollectionTest.shouldRetrieveTheChildrenOfChildrenCorrectly" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.NodeComponentCollectionTest.shouldHaveAllTheChildrenAndSubChildrenWithTheRoot" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.NodeComponentCollectionTest.shouldHaveIteratorOfSizeZeroWhenRootWithNoChildren" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.NodeComponentCollectionTest.shouldNotAllowNullValue" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.NodeComponentCollectionTest.shouldReturnTheIteratorWithSizeZeroWhenRootHasNoChildren" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.NodeComponentImplTest.shouldReturnTheChildrenOfSubdirectory" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.NodeComponentImplTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.NodeComponentImplTest.shouldReturnChildrenOfRootDirectory" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.NodeComponentImplTest.shouldReturnEmptyListWhenRootDirectoryIsEmpty" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.NodeComponentCollectionTest.shouldRetrieveTheChildrenOfChildrenCorrectly" />
       </list>
     </recent_temporary>
   </component>
@@ -682,39 +693,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="NodeComponentCollectionTest - 2016.11.21 at 01h 04m 43s.xml">
-      <configuration name="NodeComponentCollectionTest" configurationId="JUnit" />
+    <history-entry file="NodeComponentImplTest - 2016.11.21 at 02h 24m 12s.xml">
+      <configuration name="NodeComponentImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NodeComponentCollectionTest_shouldHaveAllTheChildrenAndSubChildrenWithTheRoot - 2016.11.21 at 01h 26m 16s.xml">
-      <configuration name="NodeComponentCollectionTest.shouldHaveAllTheChildrenAndSubChildrenWithTheRoot" configurationId="JUnit" />
+    <history-entry file="NodeComponentImplTest - 2016.11.21 at 02h 26m 01s.xml">
+      <configuration name="NodeComponentImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NodeComponentCollectionTest_shouldHaveAllTheChildrenAndSubChildrenWithoutTheRoot - 2016.11.21 at 00h 56m 05s.xml">
-      <configuration name="NodeComponentCollectionTest.shouldHaveAllTheChildrenAndSubChildrenWithoutTheRoot" configurationId="JUnit" />
+    <history-entry file="NodeComponentImplTest - 2016.11.21 at 02h 26m 46s.xml">
+      <configuration name="NodeComponentImplTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NodeComponentCollectionTest_shouldHaveIteratorOfSizeZeroWhenRootWithNoChildren - 2016.11.21 at 01h 21m 08s.xml">
-      <configuration name="NodeComponentCollectionTest.shouldHaveIteratorOfSizeZeroWhenRootWithNoChildren" configurationId="JUnit" />
+    <history-entry file="NodeComponentImplTest_shouldReturnChildrenOfRootDirectory - 2016.11.21 at 02h 00m 33s.xml">
+      <configuration name="NodeComponentImplTest.shouldReturnChildrenOfRootDirectory" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NodeComponentCollectionTest_shouldHaveIteratorOfSizeZeroWhenRootWithNoChildren - 2016.11.21 at 01h 22m 44s.xml">
-      <configuration name="NodeComponentCollectionTest.shouldHaveIteratorOfSizeZeroWhenRootWithNoChildren" configurationId="JUnit" />
+    <history-entry file="NodeComponentImplTest_shouldReturnChildrenOfRootDirectory - 2016.11.21 at 02h 25m 52s.xml">
+      <configuration name="NodeComponentImplTest.shouldReturnChildrenOfRootDirectory" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NodeComponentCollectionTest_shouldNotAllowNullValue - 2016.11.21 at 01h 18m 56s.xml">
-      <configuration name="NodeComponentCollectionTest.shouldNotAllowNullValue" configurationId="JUnit" />
+    <history-entry file="NodeComponentImplTest_shouldReturnEmptyListWhenRootDirectoryIsEmpty - 2016.11.21 at 02h 12m 36s.xml">
+      <configuration name="NodeComponentImplTest.shouldReturnEmptyListWhenRootDirectoryIsEmpty" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NodeComponentCollectionTest_shouldRetrieveTheChildrenOfChildrenCorrectly - 2016.11.21 at 01h 44m 57s.xml">
-      <configuration name="NodeComponentCollectionTest.shouldRetrieveTheChildrenOfChildrenCorrectly" configurationId="JUnit" />
+    <history-entry file="NodeComponentImplTest_shouldReturnEmptyListWhenRootDirectoryIsEmpty - 2016.11.21 at 02h 13m 26s.xml">
+      <configuration name="NodeComponentImplTest.shouldReturnEmptyListWhenRootDirectoryIsEmpty" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NodeComponentCollectionTest_shouldRetrieveTheIteratorProperly - 2016.11.21 at 01h 03m 45s.xml">
-      <configuration name="NodeComponentCollectionTest.shouldRetrieveTheIteratorProperly" configurationId="JUnit" />
+    <history-entry file="NodeComponentImplTest_shouldReturnTheChildrenOfSubdirectory - 2016.11.21 at 02h 29m 44s.xml">
+      <configuration name="NodeComponentImplTest.shouldReturnTheChildrenOfSubdirectory" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NodeComponentCollectionTest_shouldReturnTheIteratorWithSizeZeroWhenRootHasNoChildren - 2016.11.21 at 01h 12m 23s.xml">
-      <configuration name="NodeComponentCollectionTest.shouldReturnTheIteratorWithSizeZeroWhenRootHasNoChildren" configurationId="JUnit" />
+    <history-entry file="NodeComponentImplTest_shouldReturnTheChildrenOfSubdirectory - 2016.11.21 at 02h 29m 57s.xml">
+      <configuration name="NodeComponentImplTest.shouldReturnTheChildrenOfSubdirectory" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NodeComponentCollectionTest_shouldReturnTheIteratorWithSizeZeroWhenRootHasNoChildren - 2016.11.21 at 01h 13m 07s.xml">
-      <configuration name="NodeComponentCollectionTest.shouldReturnTheIteratorWithSizeZeroWhenRootHasNoChildren" configurationId="JUnit" />
+    <history-entry file="NodeComponentImplTest_shouldReturnTheChildrenOfSubdirectory - 2016.11.21 at 02h 30m 47s.xml">
+      <configuration name="NodeComponentImplTest.shouldReturnTheChildrenOfSubdirectory" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -724,7 +735,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5044346" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32886267" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34088334" sideWeight="0.4955654" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24915062" sideWeight="0.4955654" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32616082" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -831,16 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/gft/bench/model/NodeComponentImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/gft/bench/model/NodeComponentStringImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -859,16 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/gft/bench/model/NodeComponentCollectionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1602">
-          <caret line="116" column="6" selection-start-line="116" selection-start-column="6" selection-end-line="116" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gft/bench/model/NodeComponentImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -878,6 +869,26 @@
             <element signature="e#429#430#0" expanded="true" />
             <element signature="e#475#476#0" expanded="true" />
             <element signature="e#505#506#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/gft/bench/model/NodeComponentImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1544">
+          <caret line="78" column="24" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/gft/bench/model/NodeComponentCollectionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1298">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -55,9 +55,9 @@ public class NodeComponentCollectionTest {
         node7 = null;
     }
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void shouldNotAllowNullValue() {
-        expectedException.expect(IllegalArgumentException.class);
+
         NodeComponentCollection<String> nodeComponentCollection = new NodeComponentCollection<>(null);
     }
 
