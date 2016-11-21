@@ -115,8 +115,6 @@ public class NodeComponentCollectionTest {
      * first parameter is the parent node
      * the second parameter is the array of children which is dynamic
      *
-     * @param root
-     * @param node
      */
     private void createChildren(NodeComponentStringImpl root, NodeComponentStringImpl... node) {
         List<NodeComponentStringImpl> list = Arrays.asList(node);
