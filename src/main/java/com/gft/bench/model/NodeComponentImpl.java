@@ -10,13 +10,13 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
-class NodeComponentImpl implements
+public class NodeComponentImpl implements
         NodeComponent<Path> {
 
     private Path payLoad;
 
 
-    NodeComponentImpl(Path payLoad) {
+    public NodeComponentImpl(Path payLoad) {
         this.payLoad = payLoad;
     }
 
@@ -29,7 +29,6 @@ class NodeComponentImpl implements
     @Override
     public List<NodeComponent<Path>> getChildren() {
         return createTreeOfFile().stream().map(NodeComponentImpl::new).collect(toList());
-
     }
 
     /**

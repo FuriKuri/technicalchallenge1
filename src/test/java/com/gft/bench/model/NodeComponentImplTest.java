@@ -61,14 +61,16 @@ public class NodeComponentImplTest {
     @Test
     public void shouldReturnTheChildrenOfSubdirectory() throws IOException {
         //given
-        File file1 = tempFolder.newFile("file1.txt");
         File folder1 = tempFolder.newFolder("folder1");
+        File file1 = tempFolder.newFile("file1.txt");
+
+        //folder1 has two children : folder2 and file2
         File folder2 = tempFolder.newFolder("folder1","folder2");
         File file2 = tempFolder.newFile("folder1\\file2");
-        NodeComponentImpl root = new NodeComponentImpl(folder1.toPath());
+        NodeComponentImpl subDirectory = new NodeComponentImpl(folder1.toPath());
 
         //when
-        List<NodeComponent<Path>> listOfChildrenOfRoot = root.getChildren();
+        List<NodeComponent<Path>> listOfChildrenOfRoot = subDirectory.getChildren();
         List<Path> childrenPaths = new ArrayList<>();
         for (NodeComponent<Path> aListOfChildrenOfRoot : listOfChildrenOfRoot) {
             Path a = aListOfChildrenOfRoot.getPayload();

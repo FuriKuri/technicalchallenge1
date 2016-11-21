@@ -12,16 +12,16 @@ package com.gft.bench.pojo;
  * <p>
  * {"rootDirectoryPath" : "/root"}
  */
-public class ModelIncomingMessage {
+public class IncomingMessage {
 
 
     private String rootDirectoryPath;
 
-    public ModelIncomingMessage() {
+    public IncomingMessage() {
 
     }
 
-    public ModelIncomingMessage(String rootDirectoryPath) {
+    public IncomingMessage(String rootDirectoryPath) {
         this.rootDirectoryPath = rootDirectoryPath;
     }
 

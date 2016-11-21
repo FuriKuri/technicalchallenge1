@@ -4,12 +4,12 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-class NodeComponentCollection<T>
+public class NodeComponentCollection<T>
         implements Iterable<T> {
 
     private NodeComponent<T> node;
 
-    NodeComponentCollection(@NotNull NodeComponent<T> node) {
+    public NodeComponentCollection(@NotNull NodeComponent<T> node) {
         this.node = node;
     }
 

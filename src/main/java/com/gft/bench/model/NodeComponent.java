@@ -4,7 +4,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-interface NodeComponent<T> {
+public interface NodeComponent<T> {
 
     T getPayload();
 

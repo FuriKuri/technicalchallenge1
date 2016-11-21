@@ -10,7 +10,7 @@ import java.util.List;
  * The service that interest us is {@link NodeComponent#getPayload()} and
  * {@link NodeComponent#getChildren()}
  */
-class NodeComponentStringImpl implements NodeComponent<String> {
+public class NodeComponentStringImpl implements NodeComponent<String> {
 
 
     /**
@@ -27,7 +27,7 @@ class NodeComponentStringImpl implements NodeComponent<String> {
     /**
      * set level parent payload and children of this node
      */
-    NodeComponentStringImpl(String payLoad, List<NodeComponent<String>> children) {
+    public NodeComponentStringImpl(String payLoad, List<NodeComponent<String>> children) {
 
         this.payLoad = payLoad;
         this.children = children;
@@ -54,7 +54,7 @@ class NodeComponentStringImpl implements NodeComponent<String> {
     /**
      * Replace the children subtree.
      */
-    void setChildren(List<NodeComponent<String>> children) {
+    public void setChildren(List<NodeComponent<String>> children) {
         this.children = children;
     }
 
