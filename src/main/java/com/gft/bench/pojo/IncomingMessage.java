@@ -2,34 +2,32 @@ package com.gft.bench.pojo;
 
 /**
  * to model the message carrying the name of the root directory.
- * this class is a plain old java object with rootDirectoryPath
- * and getRootDirectoryPath.
+ * this class is a plain old java object with path
+ * and getPath.
  * <p>
- * The service accept messages containing a rootDirectoryPath
+ * The service accept messages containing a path
  * in a STOMP message whose body is a JSON object. If the
- * rootDirectoryPath given is "/root", the message might look
+ * path given is "/root", the message might look
  * something like this:
  * <p>
- * {"rootDirectoryPath" : "/root"}
+ * {"path" : "/root"}
  */
 public class IncomingMessage {
 
-
-    private String rootDirectoryPath;
+    private String path;
 
     public IncomingMessage() {
-
     }
 
-    public IncomingMessage(String rootDirectoryPath) {
-        this.rootDirectoryPath = rootDirectoryPath;
+    public IncomingMessage(String path) {
+        this.path = path;
     }
 
-    public String getRootDirectoryPath() {
-        return rootDirectoryPath;
+    public String getPath() {
+        return path;
     }
 
-    public void setRootDirectoryPath(String rootDirectoryPath) {
-        this.rootDirectoryPath = rootDirectoryPath;
+    public void setPath(String path) {
+        this.path = path;
     }
 }

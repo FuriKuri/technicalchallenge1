@@ -51,9 +51,11 @@ public class FileServiceImpl implements FileService {
             NodeComponentImpl nodeRoot = new NodeComponentImpl(path);
             List<NodeComponent<Path>> list = nodeRoot.getChildren();
             all.addAll(list);
-            list.stream().filter(nc -> Files.isDirectory(nc.getPayload())).forEach(nc -> {
-                findAllFileAndFolder(nc.getPayload());
-            });
+            list.stream ( ).filter ( nc -> {
+                return Files.isDirectory ( nc.getPayload ( ) );
+            } ).forEach ( nc -> {
+                findAllFileAndFolder ( nc.getPayload ( ) );
+            } );
         }
         all.add(new NodeComponentImpl(path));
         return all;

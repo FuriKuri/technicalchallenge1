@@ -20,7 +20,7 @@ import java.util.List;
 public class NodeComponentCollectionTest {
 
     @Rule
-    public ExpectedException expectedException = ExpectedException.none();
+    public ExpectedException expectedException = ExpectedException.none ( );
 
     private NodeComponentStringImpl root;
     private NodeComponentStringImpl node1;
@@ -33,14 +33,14 @@ public class NodeComponentCollectionTest {
 
     @Before
     public void setUp() {
-        root = new NodeComponentStringImpl("root", Lists.emptyList());
-        node1 = new NodeComponentStringImpl("node1", Lists.emptyList());
-        node2 = new NodeComponentStringImpl("node2", Lists.emptyList());
-        node3 = new NodeComponentStringImpl("node3", Lists.emptyList());
-        node4 = new NodeComponentStringImpl("node4", Lists.emptyList());
-        node5 = new NodeComponentStringImpl("node5", Lists.emptyList());
-        node6 = new NodeComponentStringImpl("node6", Lists.emptyList());
-        node7 = new NodeComponentStringImpl("node7", Lists.emptyList());
+        root = new NodeComponentStringImpl ( "root", Lists.emptyList ( ) );
+        node1 = new NodeComponentStringImpl ( "node1", Lists.emptyList ( ) );
+        node2 = new NodeComponentStringImpl ( "node2", Lists.emptyList ( ) );
+        node3 = new NodeComponentStringImpl ( "node3", Lists.emptyList ( ) );
+        node4 = new NodeComponentStringImpl ( "node4", Lists.emptyList ( ) );
+        node5 = new NodeComponentStringImpl ( "node5", Lists.emptyList ( ) );
+        node6 = new NodeComponentStringImpl ( "node6", Lists.emptyList ( ) );
+        node7 = new NodeComponentStringImpl ( "node7", Lists.emptyList ( ) );
     }
 
     @After
@@ -55,27 +55,31 @@ public class NodeComponentCollectionTest {
         node7 = null;
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void shouldNotAllowNullValue() {
 
-        NodeComponentCollection<String> nodeComponentCollection = new NodeComponentCollection<>(null);
+        expectedException.expect ( IllegalArgumentException.class );
+        expectedException.expectMessage ( "Argument for @NotNull parameter 'node' of com/gft/bench/model/NodeComponentCollection.<init> must not be null" );
+        NodeComponentCollection <String> nodeComponentCollection = new NodeComponentCollection <>(null);
+        nodeComponentCollection.iterator();
+
     }
 
     @Test
     public void shouldHaveIteratorOfSizeOneWhenRootWithNoChildren() {
-        NodeComponentCollection<String> collection = new NodeComponentCollection<>(root);
+        NodeComponentCollection<String> collection = new NodeComponentCollection<> ( root );
 
-        Assertions.assertThat(collection).hasSize(1);
+        Assertions.assertThat ( collection ).hasSize ( 1 );
     }
 
     @Test
     public void shouldRetrieveTheIteratorProperly() {
         int numberOfChildren = 2;
-        createChildren(root, node1, node2);
+        createChildren ( root, node1, node2 );
 
-        NodeComponentCollection<String> collection = new NodeComponentCollection<>(root);
+        NodeComponentCollection<String> collection = new NodeComponentCollection<> ( root );
 
-        Assertions.assertThat(collection).size().isEqualTo(numberOfChildren + 1);//considering the root object
+        Assertions.assertThat ( collection ).size ( ).isEqualTo ( numberOfChildren + 1 );//considering the root object
     }
 
     /**
@@ -94,32 +98,35 @@ public class NodeComponentCollectionTest {
     @Test
     public void shouldHaveAllTheChildrenWithTheRoot() {
         //Given Start
-        createChildren(root, node1, node2);
-        createChildren(node1, node3, node4);
-        createChildren(node2, node5);
-        createChildren(node5, node6, node7);
+        createChildren ( root, node1, node2 );
+        createChildren ( node1, node3, node4 );
+        createChildren ( node2, node5 );
+        createChildren ( node5, node6, node7 );
 
         //when
-        NodeComponentCollection<String> collectionOfNode = new NodeComponentCollection<>(root);
+        NodeComponentCollection<String> collectionOfNode = new NodeComponentCollection<> ( root );
 
+        for (String s : collectionOfNode) {
+            System.out.println ( s );
+
+        }
         //then
-        Assertions.assertThat(collectionOfNode).contains(root.getPayload(),
-                node1.getPayload(), node2.getPayload(), node3.getPayload(),
-                node4.getPayload(), node5.getPayload(), node6.getPayload(),
-                node7.getPayload());
+        Assertions.assertThat ( collectionOfNode ).hasSize ( 8 );
+        Assertions.assertThat ( collectionOfNode ).contains ( root.getPayload ( ),
+                node1.getPayload ( ), node2.getPayload ( ), node3.getPayload ( ),
+                node4.getPayload ( ), node5.getPayload ( ), node6.getPayload ( ),
+                node7.getPayload ( ) );
     }
-
 
 
     /**
      * first parameter is the parent node
      * the second parameter is the array of children which is dynamic
-     *
      */
     private void createChildren(NodeComponentStringImpl root, NodeComponentStringImpl... node) {
-        List<NodeComponentStringImpl> list = Arrays.asList(node);
-        List<NodeComponent<String>> children_of_root = new ArrayList<>();
-        children_of_root.addAll(list);
-        root.setChildren(children_of_root);
+        List<NodeComponentStringImpl> list = Arrays.asList ( node );
+        List<NodeComponent<String>> children_of_root = new ArrayList<> ( );
+        children_of_root.addAll ( list );
+        root.setChildren ( children_of_root );
     }
 }

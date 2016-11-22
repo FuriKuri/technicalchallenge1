@@ -21,6 +21,6 @@ public class FileServiceImplTest {
 
         List<String> files = service.getObservable().map(Path::toString).toList().toBlocking().first();
 
-        assertThat(files, hasSize(3));
+        assertThat(files, hasSize(4));
     }
 }
