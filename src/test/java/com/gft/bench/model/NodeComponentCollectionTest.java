@@ -55,15 +55,6 @@ public class NodeComponentCollectionTest {
         node7 = null;
     }
 
-    @Test
-    public void shouldNotAllowNullValue() {
-
-        expectedException.expect ( IllegalArgumentException.class );
-        expectedException.expectMessage ( "Argument for @NotNull parameter 'node' of com/gft/bench/model/NodeComponentCollection.<init> must not be null" );
-        NodeComponentCollection <String> nodeComponentCollection = new NodeComponentCollection <>(null);
-        nodeComponentCollection.iterator();
-
-    }
 
     @Test
     public void shouldHaveIteratorOfSizeOneWhenRootWithNoChildren() {
