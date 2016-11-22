@@ -1,5 +1,6 @@
 package com.gft.bench.service;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -12,6 +13,8 @@ import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.junit.Assert.*;
 
 public class FileServiceImplTest {
+
+    @Ignore
     @Test
     public void shouldGetFileList() throws IOException {
         FileSystem fileSystem = FileSystems.getDefault();
