@@ -5,42 +5,44 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 public class NodeComponentCollection<T>
-        implements Iterable<T> {
+        implements Iterable <NodeComponent <T>> {
 
-    private NodeComponent<T> node;
+    private NodeComponent <T> nodeComponent;
 
-    public NodeComponentCollection(@NotNull NodeComponent<T> node) {
-        this.node = node;
+    public NodeComponentCollection(@NotNull NodeComponent <T> nodeComponent) {
+        this.nodeComponent = nodeComponent;
     }
 
     @Override
-    public Iterator<T> iterator() {
+    public Iterator <NodeComponent <T>> iterator() {
         return new NodeComponentIterator();
     }
 
     private class NodeComponentIterator
-            implements Iterator<T> {
+            implements Iterator <NodeComponent <T>> {
 
-        List<NodeComponent<T>> arrayList = new ArrayList<>();
+        List <NodeComponent <T>> nodeComponentChildren = new ArrayList <>();
 
         NodeComponentIterator() {
-            arrayList.add(node);
+            if (nodeComponent != null) {
+                nodeComponentChildren.add(nodeComponent);
+            }
         }
 
         @Override
         public boolean hasNext() {
-            return !arrayList.isEmpty();
+            return !nodeComponentChildren.isEmpty();
         }
 
         @Override
-        public T next() {
-            NodeComponent<T> component = arrayList.get(0);
-            arrayList.remove(0);
+        public NodeComponent <T> next() {
+            NodeComponent <T> component = nodeComponentChildren.get(0);
+            nodeComponentChildren.remove(0);
 
             if (!component.getChildren().isEmpty()) {
-                arrayList.addAll(component.getChildren());
+                nodeComponentChildren.addAll(component.getChildren());
             }
-            return component.getPayload();
+            return component;
         }
     }
 }

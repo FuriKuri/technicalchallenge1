@@ -10,13 +10,13 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
-public class NodeComponentImpl implements
+public class FileNodeComponent implements
         NodeComponent<Path> {
 
-    private Path payLoad;
+    private final Path payLoad;
 
 
-    public NodeComponentImpl(Path payLoad) {
+    public FileNodeComponent(Path payLoad) {
         this.payLoad = payLoad;
     }
 
@@ -28,7 +28,7 @@ public class NodeComponentImpl implements
     @NotNull
     @Override
     public List<NodeComponent<Path>> getChildren() {
-        return createTreeOfFile().stream().map(NodeComponentImpl::new).collect(toList());
+        return createTreeOfFile().stream().map(FileNodeComponent::new).collect(toList());
     }
 
     /**
@@ -40,16 +40,13 @@ public class NodeComponentImpl implements
             if (payLoad == null) {
                 return files;
             }
-            if (!Files.isDirectory(payLoad)) {
-                files.add(payLoad);
-            }
             if (Files.isDirectory(payLoad)) {
-                files = Files.list(payLoad).collect(toList()); //elements of the parent directory
+                return Files.list(payLoad).collect(toList()); //elements of the parent directory
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return files;
+        return files;//the payLoad is a file
     }
 
 

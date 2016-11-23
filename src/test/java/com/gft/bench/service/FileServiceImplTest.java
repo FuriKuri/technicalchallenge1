@@ -1,5 +1,6 @@
 package com.gft.bench.service;
 
+import com.gft.bench.pojo.IncomingMessage;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -14,16 +15,13 @@ import static org.junit.Assert.*;
 
 public class FileServiceImplTest {
 
-    @Ignore
+
     @Test
     public void shouldGetFileList() throws IOException {
-        FileSystem fileSystem = FileSystems.getDefault();
-        String path = "/test";
-        FileServiceImpl service = new FileServiceImpl(fileSystem,path);
-
+        FileServiceImpl service = new FileServiceImpl(new IncomingMessage("/test"));
 
         List<String> files = service.getObservable().map(Path::toString).toList().toBlocking().first();
 
-        assertThat(files, hasSize(4));
+        assertThat(files, hasSize(3));
     }
 }

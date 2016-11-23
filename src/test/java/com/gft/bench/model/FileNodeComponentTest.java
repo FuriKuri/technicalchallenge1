@@ -17,7 +17,7 @@ import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.hasSize;
 
-public class NodeComponentImplTest {
+public class FileNodeComponentTest {
 
     @Rule
     public TemporaryFolder tempFolder = new TemporaryFolder();
@@ -25,7 +25,7 @@ public class NodeComponentImplTest {
     @Test
     public void shouldReturnEmptyListWhenRootDirectoryIsEmpty() throws IOException {
         //given
-        NodeComponentImpl rootNode = new NodeComponentImpl(tempFolder.getRoot().toPath());
+        FileNodeComponent rootNode = new FileNodeComponent(tempFolder.getRoot().toPath());
 
         //when
         List<NodeComponent<Path>> listOfChildrenOfRoot = rootNode.getChildren();
@@ -44,7 +44,7 @@ public class NodeComponentImplTest {
         File folder2 = tempFolder.newFolder("folder1","folder2");
         File file2 = tempFolder.newFile("folder1\\file2");
 
-        NodeComponentImpl root = new NodeComponentImpl(tempFolder.getRoot().toPath());
+        FileNodeComponent root = new FileNodeComponent(tempFolder.getRoot().toPath());
 
         //when
         List<NodeComponent<Path>> listOfChildrenOfRoot = root.getChildren();
@@ -70,7 +70,7 @@ public class NodeComponentImplTest {
         //folder1 has two children : folder2 and file2
         File folder2 = tempFolder.newFolder("folder1","folder2");
         File file2 = tempFolder.newFile("folder1\\file2");
-        NodeComponentImpl subDirectory = new NodeComponentImpl(folder1.toPath());
+        FileNodeComponent subDirectory = new FileNodeComponent(folder1.toPath());
 
         //when
         List<NodeComponent<Path>> listOfChildrenOfRoot = subDirectory.getChildren();
