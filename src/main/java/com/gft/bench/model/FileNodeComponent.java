@@ -41,12 +41,12 @@ public class FileNodeComponent implements
                 return files;
             }
             if (Files.isDirectory(payLoad)) {
-                return Files.list(payLoad).collect(toList()); //elements of the parent directory
+                files= Files.list(payLoad).collect(toList()); //elements of the parent directory
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return files;//the payLoad is a file
+        return files;
     }
 
 

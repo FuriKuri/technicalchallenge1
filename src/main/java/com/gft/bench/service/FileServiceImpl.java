@@ -4,18 +4,24 @@ import com.gft.bench.model.FileNodeComponent;
 import com.gft.bench.model.FileNodeComponentCollection;
 import com.gft.bench.model.NodeComponent;
 import com.gft.bench.pojo.IncomingMessage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import rx.Observable;
 
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 
-
+/**
+ * this class is called from WatchingComponent to create an Observable
+ */
+@Service
 class FileServiceImpl implements FileService {
 
     private IncomingMessage incomingMessage;
 
 
+    @Autowired
     FileServiceImpl(IncomingMessage incomingMessage) {
         this.incomingMessage = incomingMessage;
     }

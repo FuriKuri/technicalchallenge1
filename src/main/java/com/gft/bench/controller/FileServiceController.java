@@ -1,11 +1,7 @@
 package com.gft.bench.controller;
 
-import com.gft.bench.pojo.IncomingMessage;
-import com.gft.bench.pojo.OutgoingMessage;
 import com.gft.bench.service.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
