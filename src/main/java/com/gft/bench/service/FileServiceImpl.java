@@ -5,6 +5,7 @@ import com.gft.bench.model.FileNodeComponentCollection;
 import com.gft.bench.model.NodeComponent;
 import com.gft.bench.pojo.IncomingMessage;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import rx.Observable;
 
@@ -17,6 +18,7 @@ import java.nio.file.Path;
  */
 @Service
 class FileServiceImpl implements FileService {
+
 
     private IncomingMessage incomingMessage;
 
