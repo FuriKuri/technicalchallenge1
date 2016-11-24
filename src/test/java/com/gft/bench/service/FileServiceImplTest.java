@@ -16,6 +16,7 @@ import static org.junit.Assert.*;
 public class FileServiceImplTest {
 
 
+    @Ignore
     @Test
     public void shouldGetFileList() throws IOException {
         FileServiceImpl service = new FileServiceImpl(new IncomingMessage("/test"));
