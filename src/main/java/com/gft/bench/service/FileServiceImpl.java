@@ -21,18 +21,19 @@ class FileServiceImpl implements FileService {
 
 
     private IncomingMessage incomingMessage;
+    private FileSystem fileSystem;
 
 
     @Autowired
-    FileServiceImpl(IncomingMessage incomingMessage) {
+    FileServiceImpl(IncomingMessage incomingMessage, FileSystem fileSystem) {
         this.incomingMessage = incomingMessage;
+        this.fileSystem = fileSystem;
     }
 
     @Override
     public Observable <Path> getObservable() {
 
         return Observable.create(subscriber -> {
-            FileSystem fileSystem = FileSystems.getDefault();
             Path path = fileSystem.getPath(incomingMessage.getPath());
             FileNodeComponentCollection files = new FileNodeComponentCollection(new FileNodeComponent(path));
             for (NodeComponent <Path> file : files) {

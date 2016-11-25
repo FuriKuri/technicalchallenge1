@@ -1,78 +1,99 @@
 package com.gft.bench.model;
 
+import com.google.common.jimfs.Configuration;
+import com.google.common.jimfs.Jimfs;
 import org.assertj.core.api.Assertions;
-import org.assertj.core.util.Lists;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import java.io.IOException;
+import java.nio.file.FileSystem;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasSize;
 
 /**
  * The {@link NodeComponentCollection} offer services related to {@link NodeComponent}
  * The {@link NodeComponentCollection} uses the {@link NodeComponent} to create Iterable
  * collection. the service that interest us is {@link NodeComponentCollection#iterator()} which return Iterator.
  */
-public class NodeComponentCollectionTest {
+public class NodeComponentCollectionTest{
 
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 
-    private NodeComponentStringImpl root;
-    private NodeComponentStringImpl node1;
-    private NodeComponentStringImpl node2;
-    private NodeComponentStringImpl node3;
-    private NodeComponentStringImpl node4;
-    private NodeComponentStringImpl node5;
-    private NodeComponentStringImpl node6;
-    private NodeComponentStringImpl node7;
+
+    private FileSystem fileSystem = Jimfs.newFileSystem( Configuration.unix() );
+    private Path rootp = fileSystem.getPath( "/root" );
 
     @Before
-    public void setUp() {
-        root = new NodeComponentStringImpl("root", Lists.emptyList());
-        node1 = new NodeComponentStringImpl("node1", Lists.emptyList());
-        node2 = new NodeComponentStringImpl("node2", Lists.emptyList());
-        node3 = new NodeComponentStringImpl("node3", Lists.emptyList());
-        node4 = new NodeComponentStringImpl("node4", Lists.emptyList());
-        node5 = new NodeComponentStringImpl("node5", Lists.emptyList());
-        node6 = new NodeComponentStringImpl("node6", Lists.emptyList());
-        node7 = new NodeComponentStringImpl("node7", Lists.emptyList());
+    public void setUp() throws IOException{
+        Files.createDirectory( rootp );
+
+
     }
 
     @After
-    public void cleanUp() {
-        root = null;
-        node1 = null;
-        node2 = null;
-        node3 = null;
-        node4 = null;
-        node5 = null;
-        node6 = null;
-        node7 = null;
+    public void cleanUp() throws IOException{
+        Files.walkFileTree( rootp, new SimpleFileVisitor <Path>(){
+
+            @Override
+            public FileVisitResult visitFile( Path file, BasicFileAttributes attrs ) throws IOException{
+                Files.delete( file );
+                return FileVisitResult.CONTINUE;
+            }
+
+            @Override
+            public FileVisitResult postVisitDirectory( Path dir, IOException exc ) throws IOException{
+                Files.delete( dir );
+                return FileVisitResult.CONTINUE;
+            }
+
+        } );
     }
 
 
     @Test
-    public void shouldHaveIteratorOfSizeOneWhenRootWithNoChildren() {
-        NodeComponentCollection <String> collection = new NodeComponentCollection <>(root);
+    public void shouldHaveIteratorOfSizeOneWhenRootWithNoChildren(){
 
-        Assertions.assertThat(collection).hasSize(1);
+        FileNodeComponent root = new FileNodeComponent( rootp );
+        NodeComponentCollection <Path> collection = new NodeComponentCollection <>( root );
+
+
+        assertThat( Arrays.asList( collection ), hasSize( 1 ) );
+        assertThat( collection, contains( root ) );
     }
 
     @Test
-    public void shouldRetrieveTheIteratorProperly() {
+    public void shouldRetrieveTheIteratorProperly() throws IOException{
         int numberOfChildren = 2;
-        createChildren(root, node1, node2);
+        Path node1 = createDirectory( rootp.toString(), "node1" );
+        Path node2 = createDirectory( rootp.toString(), "node2" );
 
-        NodeComponentCollection <String> collection = new NodeComponentCollection <>(root);
+        FileNodeComponent root = new FileNodeComponent( rootp );
+        NodeComponentCollection <Path> collection = new NodeComponentCollection <>( root );
+        List <NodeComponent <Path>> resultList = new ArrayList <>();
+        for( NodeComponent <Path> nodeComponent : collection ){
+            resultList.add( nodeComponent );
+        }
 
-        Assertions.assertThat(collection).size().isEqualTo(numberOfChildren + 1);//considering the root object
+        assertThat( resultList, hasSize( numberOfChildren+1 ) );
     }
-
+//
     /**
      * the purpose of this method is to check if the following tree is in the iterator
      * <p>
@@ -87,36 +108,30 @@ public class NodeComponentCollectionTest {
      * so the iterator must have all the 7 nodes.
      */
     @Test
-    public void shouldHaveAllTheChildrenWithTheRoot() {
+    public void shouldRetrieveAllTheChildrenWithTheRoot() throws IOException{
         //Given Start
-        createChildren(root, node1, node2);
-        createChildren(node1, node3, node4);
-        createChildren(node2, node5);
-        createChildren(node5, node6, node7);
+        Path node1 = createDirectory( rootp.toString(), "node1" );
+        Path node2 = createDirectory( rootp.toString(), "node2" );
+        Path node3 = createFile( node1.toString(), "node3" );
+        Path node4 = createFile( node1.toString(), "node4" );
+        Path node5 = createDirectory( node2.toString(), "node5" );
+        Path node6 = createFile( node5.toString(), "node6" );
+        Path node7 = createFile( node5.toString(), "node7" );
+        FileNodeComponent root = new FileNodeComponent( rootp );
 
         //when
-        NodeComponentCollection <String> collectionOfNode = new NodeComponentCollection <>(root);
+        NodeComponentCollection <Path> collectionOfNode = new NodeComponentCollection <>( root );
 
-//        for (NodeComponent<String> s : collectionOfNode) {
-//            System.out.println ( s );
-//        }
         //then
-        Assertions.assertThat(collectionOfNode).hasSize(8);
-        Assertions.assertThat(collectionOfNode).contains(root,
-                node1, node2, node3,
-                node4, node5, node6,
-                node7);
+        Assertions.assertThat( collectionOfNode ).hasSize( 8 );
     }
 
 
-    /**
-     * first parameter is the parent node
-     * the second parameter is the array of children which is dynamic
-     */
-    private void createChildren(NodeComponentStringImpl root, NodeComponentStringImpl... node) {
-        List <NodeComponentStringImpl> list = Arrays.asList(node);
-        List <NodeComponent <String>> children_of_root = new ArrayList <>();
-        children_of_root.addAll(list);
-        root.setChildren(children_of_root);
+    private Path createFile( String parent, String file ) throws IOException{
+        return Files.createFile( fileSystem.getPath( parent, file ) );
+    }
+
+    private Path createDirectory( String parent, String subdirectory ) throws IOException{
+        return Files.createDirectories( fileSystem.getPath( parent, subdirectory ) );
     }
 }

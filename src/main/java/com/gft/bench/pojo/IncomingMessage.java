@@ -1,5 +1,7 @@
 package com.gft.bench.pojo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  * to model the message carrying the name of the root directory.
  * this class is a plain old java object with path
@@ -27,6 +29,7 @@ public class IncomingMessage {
         return path;
     }
 
+    @Autowired
     public void setPath(String path) {
         this.path = path;
     }

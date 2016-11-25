@@ -16,7 +16,7 @@ public class WatchingComponent{
     //private final Map <WatchKey, Path> keys;
 
     //get all file and subdirectory
-    private FileService fileService;
+    private final FileService fileService;
 
     //to notify the websocket
     private PublishSubject <String> publishSubject = PublishSubject.create();

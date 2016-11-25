@@ -1,90 +1,121 @@
 package com.gft.bench.model;
 
+import com.google.common.jimfs.Configuration;
+import com.google.common.jimfs.Jimfs;
+import org.junit.After;
 import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Rule;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.rules.TemporaryFolder;
 
-import java.io.File;
 import java.io.IOException;
+import java.nio.file.FileSystem;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;
-import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.hasSize;
 
-public class FileNodeComponentTest {
+public class FileNodeComponentTest{
 
-    @Rule
-    public TemporaryFolder tempFolder = new TemporaryFolder();
+    private FileSystem fileSystem = Jimfs.newFileSystem( Configuration.unix() );
+    private Path root = fileSystem.getPath( "/root" );
 
-    @Test
-    public void shouldReturnEmptyListWhenRootDirectoryIsEmpty() throws IOException {
-        //given
-        FileNodeComponent rootNode = new FileNodeComponent(tempFolder.getRoot().toPath());
-
-        //when
-        List<NodeComponent<Path>> listOfChildrenOfRoot = rootNode.getChildren();
-
-        //then
-        Assert.assertNotNull(listOfChildrenOfRoot);
+    @Before
+    public void setUp() throws IOException{
+        Files.createDirectory( root );
     }
 
-    @Ignore
+    @After
+    public void cleanUp() throws IOException{
+        Files.walkFileTree( root, new SimpleFileVisitor <Path>(){
+
+            @Override
+            public FileVisitResult visitFile( Path file, BasicFileAttributes attrs ) throws IOException{
+                Files.delete( file );
+                return FileVisitResult.CONTINUE;
+            }
+
+            @Override
+            public FileVisitResult postVisitDirectory( Path dir, IOException exc ) throws IOException{
+                Files.delete( dir );
+                return FileVisitResult.CONTINUE;
+            }
+
+        } );
+    }
+
     @Test
-    public void shouldReturnChildrenOfRootDirectory() throws IOException {
-
+    public void shouldReturnEmptyListWhenRootDirectoryIsEmpty() throws IOException{
         //given
-        File file1 = tempFolder.newFile("file1.txt");
-        File folder1 = tempFolder.newFolder("folder1");
-        File folder2 = tempFolder.newFolder("folder1","folder2");
-        File file2 = tempFolder.newFile("folder1\\file2");
-
-        FileNodeComponent root = new FileNodeComponent(tempFolder.getRoot().toPath());
+        FileNodeComponent rootNode = new FileNodeComponent( root );
 
         //when
-        List<NodeComponent<Path>> listOfChildrenOfRoot = root.getChildren();
-        List<Path> childrenPaths = new ArrayList<>();
-        for (NodeComponent<Path> aListOfChildrenOfRoot : listOfChildrenOfRoot) {
+        List <NodeComponent <Path>> listOfChildrenOfRoot = rootNode.getChildren();
+
+        //then
+        Assert.assertNotNull( listOfChildrenOfRoot );
+    }
+
+
+    @Test
+    public void shouldReturnOnlyChildrenOfRootDirectory() throws IOException{
+
+        //given
+        Path directory = createDirectory( root.toString(), "directory" );
+        Path file1 = createFile( root.toString(), "file1.txt" );
+        Path file2 = createFile( root.toString(), "file2.txt" );
+        FileNodeComponent rootDir = new FileNodeComponent( root );
+
+        //when
+        List <NodeComponent <Path>> listOfChildrenOfRoot = rootDir.getChildren();
+        List <Path> childrenPaths = new ArrayList <>();
+        for( NodeComponent <Path> aListOfChildrenOfRoot : listOfChildrenOfRoot ){
             Path a = aListOfChildrenOfRoot.getPayload();
-            childrenPaths.add(a);
+            childrenPaths.add( a );
         }
 
         //then
-        assertThat(childrenPaths, hasSize(2));
-        assertThat(childrenPaths, contains(file1.toPath(), folder1.toPath()));
+        assertThat( childrenPaths, hasSize( 3 ) );
+        assertThat( childrenPaths, contains( directory, file1, file2 ) );
 
     }
 
-    @Ignore
-    @Test
-    public void shouldReturnTheChildrenOfSubdirectory() throws IOException {
-        //given
-        File folder1 = tempFolder.newFolder("folder1");
-        File file1 = tempFolder.newFile("file1.txt");
 
-        //folder1 has two children : folder2 and file2
-        File folder2 = tempFolder.newFolder("folder1","folder2");
-        File file2 = tempFolder.newFile("folder1\\file2");
-        FileNodeComponent subDirectory = new FileNodeComponent(folder1.toPath());
+    @Test
+    public void shouldReturnTheChildrenOfSubdirectory() throws IOException{
+        //given
+        Path directory = createDirectory( root.toString(), "directory" );
+        Path directory2 = createDirectory( directory.toString(), "directory2" );
+        Path directory3 = createDirectory( directory.toString(), "directory3" );
+        Path file3 = createFile( directory.toString(), "file3" );
+        Path file4 = createFile( directory.toString(), "file4" );
+
+        FileNodeComponent subDirectory = new FileNodeComponent( directory );
 
         //when
-        List<NodeComponent<Path>> listOfChildrenOfRoot = subDirectory.getChildren();
-        List<Path> childrenPaths = new ArrayList<>();
-        for (NodeComponent<Path> aListOfChildrenOfRoot : listOfChildrenOfRoot) {
+        List <NodeComponent <Path>> listOfChildrenOfRoot = subDirectory.getChildren();
+        List <Path> childrenPaths = new ArrayList <>();
+        for( NodeComponent <Path> aListOfChildrenOfRoot : listOfChildrenOfRoot ){
             Path a = aListOfChildrenOfRoot.getPayload();
-            childrenPaths.add(a);
-            System.out.println(a);
+            childrenPaths.add( a );
         }
 
         //then
-        assertThat(childrenPaths,hasSize(2));
-        assertThat(childrenPaths, containsInAnyOrder(folder2.toPath(), file2.toPath()));
+        assertThat( childrenPaths, hasSize( 4 ) );
+        assertThat( childrenPaths, contains( directory2, directory3, file3, file4 ) );
     }
 
+    private Path createFile( String parent, String file ) throws IOException{
+        return Files.createFile( fileSystem.getPath( parent, file ) );
+    }
 
+    private Path createDirectory( String parent, String subdirectory ) throws IOException{
+        return Files.createDirectories( fileSystem.getPath( parent, subdirectory ) );
+    }
 }
