@@ -16,6 +16,11 @@ public class FileServiceController {
     @Autowired
     private FileService fileService;
 
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String index() {
+        return "index";
+    }
+
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public List<String> list() {

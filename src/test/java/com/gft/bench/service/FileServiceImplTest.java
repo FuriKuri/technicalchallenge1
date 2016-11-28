@@ -1,6 +1,6 @@
 package com.gft.bench.service;
 
-import com.gft.bench.pojo.IncomingMessage;
+import com.gft.bench.pojo.DefaultDirectory;
 import com.google.common.jimfs.Configuration;
 import com.google.common.jimfs.Jimfs;
 import org.junit.After;
@@ -27,9 +27,9 @@ public class FileServiceImplTest{
 
     private final static String ROOT = "/root";
     private FileServiceImpl fileService;
-    private IncomingMessage rootDirectory = new IncomingMessage( ROOT );
-    private FileSystem fileSystem = Jimfs.newFileSystem( Configuration.unix() );
-    private Path root = fileSystem.getPath( "/root" );
+    private DefaultDirectory rootDirectory = new DefaultDirectory( ROOT );
+    private FileSystem       fileSystem    = Jimfs.newFileSystem( Configuration.unix() );
+    private Path             root          = fileSystem.getPath( "/root" );
 
     @Before
     public void setUp() throws IOException{
