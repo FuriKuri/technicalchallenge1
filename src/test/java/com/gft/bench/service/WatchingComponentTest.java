@@ -12,7 +12,9 @@ import rx.Observable;
 import rx.Subscription;
 
 import java.nio.file.FileSystem;
+import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -48,7 +50,7 @@ public class WatchingComponentTest {
 
     @Test
     public void shouldDetectChanges() throws InterruptedException{
-        List<String> files = new ArrayList<>();
+        List<String> expectedFiles = new ArrayList<>();//Arrays.asList(fileSystem.getPath("file1.txt"), fileSystem.getPath("file2.txt"));
         CountDownLatch countDownLatch = new CountDownLatch(2);
 
         when(fileService.getObservable()).thenReturn(Observable.just(fileSystem.getPath("file1.txt")));
@@ -60,18 +62,21 @@ public class WatchingComponentTest {
         //wait until items emitted use new thread
         subscription = watchingComponent.getPublishSubject()
                 .subscribe(item -> {
-                    files.add(item);
+                    expectedFiles.add(item);//System.out.println(item);
                     countDownLatch.countDown();
                 });
         executorService.execute(() -> watchingComponent.emitData());
         countDownLatch.await();
 
-        assertThat(files, hasSize(2));
-        assertThat(files, contains("file1.txt", "file2.txt"));
+        assertThat(expectedFiles, hasSize(2));
+        assertThat(expectedFiles, contains("file1.txt", "file2.txt"));
     }
 
     @Test
     public void shouldNotUpdateIfNoChangesDetected() throws InterruptedException{
+        int NUMBER_OF_INVOCATION_PER_EMITDATA_WHEN_CHANGE = 2;
+        int NUMBER_OF_INVOCATION_PER_EMITDATA_WHEN_NO_CHANGE = 1;
+
         when(fileService.getObservable()).thenReturn(Observable.just(fileSystem.getPath("file1.txt")));
         watchingComponent.emitData();
         watchingComponent.emitData();

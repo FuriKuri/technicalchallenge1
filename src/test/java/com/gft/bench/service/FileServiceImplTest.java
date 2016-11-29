@@ -62,6 +62,7 @@ public class FileServiceImplTest{
         Path file1 = createFile( "file11.txt" );
         Path file2 = createFile( "file12.txt" );
 
+        //TODO: better readability not to change the node component to string
         List <String> files = fileService.getObservable().map( Path::toString ).toList().toBlocking().first();
 
         assertThat( files, contains( root.toString(), directory.toString(), file1.toString(), file2.toString() ) );
