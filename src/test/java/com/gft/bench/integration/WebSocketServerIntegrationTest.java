@@ -4,13 +4,17 @@ import com.gft.bench.Application;
 import com.gft.bench.pojo.DefaultDirectory;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.context.embedded.LocalServerPort;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.messaging.converter.StringMessageConverter;
 import org.springframework.messaging.simp.stomp.StompCommand;
 import org.springframework.messaging.simp.stomp.StompHeaders;
 import org.springframework.messaging.simp.stomp.StompSession;
 import org.springframework.messaging.simp.stomp.StompSessionHandler;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.web.socket.client.WebSocketClient;
 import org.springframework.web.socket.client.standard.StandardWebSocketClient;
@@ -25,17 +29,22 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = Application.class)
 public class WebSocketServerIntegrationTest {
 
+
     public ConfigurableApplicationContext run = null;
+    @LocalServerPort
+    private String port;
 
     @Test
-    public void shouldDoHandshake(){
+    public void shouldDoHandshake() throws InterruptedException{
 
         ThreadForTest threadForTest = new ThreadForTest();
 
         //GIVEN
-        String url = "ws://localhost:8080/challenge1";
+        String url = "ws://localhost:" + port + "/challenge1";
         StandardWebSocketClient standardWebSocketClient = new StandardWebSocketClient();//A WebSocketClient based on standard Java WebSocket API
         List<Transport> transports = new ArrayList<>(2);//Transport: A client-side implementation for a SockJS transport
         transports.add(new RestTemplateXhrTransport());
@@ -52,7 +61,7 @@ public class WebSocketServerIntegrationTest {
             //error
             session = webSocketSessionListenableFuture.get();
             session.subscribe("/topic", webSocketHandler);
-            webSocketHandler.session.send("/app/list", null);
+            webSocketHandler.session.send("/list", null);
 
             System.out.println("Handled response: " + webSocketHandler.singleResponse.get().getPath());
 
