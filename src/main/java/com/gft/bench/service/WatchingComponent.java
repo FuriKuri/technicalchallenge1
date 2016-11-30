@@ -20,7 +20,7 @@ public class WatchingComponent {
     private PublishSubject<String> publishSubject = PublishSubject.create();
 
     private int currentCount;
-    //@Scheduled(fixedRate = 1000)
+    @Scheduled(fixedRate = 1000)
     public synchronized void emitData(){
         int countOfElements = fileService.getObservable().count().toBlocking().first();
         if(currentCount != countOfElements){
